@@ -1,16 +1,13 @@
-# quran_pak_app
+📖 Quran Kareem App (Sindhi Translation)
+This repository contains the source code for the Quran Kareem app, featuring the complete 30 chapters (Paras/Juz) of the Quran with Sindhi translation (Tarjuma). The app is designed for an easy and immersive reading experience, allowing users to navigate through the Quran effortlessly.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🌟 Features
+Full 30 Paras (Juz) of the Quran
+Sindhi translation for better understanding
+Smooth Surah & Para navigation
+Go to Page Number – Quickly jump to any page
+Simple and user-friendly interface
+Optimized performance for a seamless experience
+🔧 Technologies Used
+Flutter for cross-platform development
+Dart as the programming language
