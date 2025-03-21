@@ -15,7 +15,4 @@ The app is designed for an easy and immersive reading experience, allowing users
 - 🛠 **Flutter** – Cross-platform app development  
 - 💻 **Dart** – Programming language  
 
-## 📥 Installation  
-1. Clone the repository:  
-   ```sh
-   git clone https://github.com/your-username/quran-kareem-sindhi.git
+
