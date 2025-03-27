@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran_pak_app/pdf_view_screen.dart';
+import 'package:quran_pak_app/features/home/pdf_view_screen.dart';
 import 'bookmark_manager.dart';
 import 'model/bookmark_model.dart';
 
