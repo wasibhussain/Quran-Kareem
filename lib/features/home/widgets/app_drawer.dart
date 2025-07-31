@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:quran_pak_app/features/bookmarks/view_bookmarks.dart';
 import 'package:quran_pak_app/features/durood_sharif/durood_listing.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:share_plus/share_plus.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
+
+  static const _playStoreUrl =
+      'https://play.google.com/store/apps/details?id=com.quran_kareem_sindhi.app';
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +114,50 @@ class AppDrawer extends StatelessWidget {
           // ),
           const Divider(),
           ListTile(
+            // ← RATE‑APP TILE
+            leading: Icon(
+              FeatherIcons.star,
+              color: Color(0xFF1F4068),
+              size: 24,
+            ),
+            title: const Text('Rate this App'),
+            onTap: () async {
+              Navigator.pop(context);
+              final uri = Uri.parse(_playStoreUrl);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Could not open the Play Store'),
+                  ),
+                );
+              }
+            },
+          ),
+          Divider(),
+
+          ListTile(
+            // ← SHARE‑APP TILE
+            leading: Icon(
+              FeatherIcons.share2,
+              color: Color(0xFF1F4068),
+              size: 24,
+            ),
+            title: const Text('Share this App'),
+            onTap: () {
+              Navigator.pop(context);
+              SharePlus.instance.share(
+                ShareParams(
+                  text: 'Check out this Quran Kareem app: $_playStoreUrl',
+                  subject: 'Quran Kareem App',
+                ),
+              );
+            },
+          ),
+
+          const Divider(),
+          ListTile(
             leading: Icon(
               FeatherIcons.info,
               color: Color(0xFF1F4068),
@@ -180,7 +229,9 @@ class AppDrawer extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Text(
-                      'A comprehensive digital Quran application providing the Noble Quran with Sindhi translation. Designed to make Quranic learning accessible, convenient, and spiritually enriching.',
+                      'A comprehensive digital Quran application providing the Noble Quran with Sindhi translation. '
+                      'Dedicated to my beloved Mother, whose love and prayers are my greatest strength. '
+                      '\nThis app is designed to make Quranic learning accessible, convenient, and spiritually enriching.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black87,

@@ -148,10 +148,11 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                   builder:
                       (context) => PdfViewerScreen(
                         assetName:
-                            'assets/pdf/chapter_${bookmark.chapterNumber}.pdf',
+                            "assets/pdf/chapter_${bookmark.chapterNumber}.pdf",
                         chapterNumber: bookmark.chapterNumber,
                         chapterName: bookmark.chapterName,
                         arabicName: bookmark.arabicName,
+                        initialPage: bookmark.pageNumber,
                       ),
                 ),
               );
